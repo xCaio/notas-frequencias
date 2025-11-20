@@ -1,50 +1,77 @@
-# Welcome to your Expo app 👋
+# Sistema de Notas e Frequência – Professor Carlos
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Este projeto é um aplicativo criado em **React Native + Expo**, permitindo que o professor Carlos cadastre alunos, notas, frequências e obtenha estatísticas da turma.
 
-## Get started
+---
 
-1. Install dependencies
+## 📌 **1. Instruções para executar o sistema**
 
-   ```bash
-   npm install
-   ```
+### **Pré-requisitos**
 
-2. Start the app
+* Node.js instalado
+* Expo CLI
+* Dispositivo Android/iOS ou Emulador
 
-   ```bash
-   npx expo start
-   ```
+### **Passos de instalação e execução**
 
-In the output, you'll find options to open the app in a
+1. Clone ou copie o projeto:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+git clone https://github.com/xCaio/notas-e-frequencia.git
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Entre na pasta do projeto:
 
-## Learn more
+```
+cd notas-frequencias
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+3. Instale as dependências:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```
+npm install
+```
 
-## Join the community
+4. Execute o projeto:
 
-Join our community of developers creating universal apps.
+```
+npx expo start
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+5. Abra no celular usando o app **Expo Go**.
+
+---
+
+## 📌 **2. Premissas assumidas**
+
+* Cada aluno possui **5 disciplinas fixas**.
+* Notas variam de **0 a 10**.
+* Frequência varia de **0% a 100%**.
+* Os dados são armazenados localmente usando **AsyncStorage**.
+* O professor acessa o sistema por um único dispositivo.
+
+---
+
+## 📌 **3. Decisões de projeto**
+
+### ✔ **Uso do React Native + Expo**
+
+Facilita o desenvolvimento e execução do aplicativo sem configurações complexas de ambiente.
+
+### ✔ **Interface construída com componentes padrão do React Native**
+
+Elimina dependências extras e mantém o projeto simples.
+
+### ✔ **Armazenamento local com AsyncStorage**
+
+Permite que os dados fiquem salvos mesmo ao fechar o aplicativo.
+
+### ✔ **Cálculos automáticos implementados no app**
+
+* Média individual do aluno
+* Média da turma por disciplina
+* Frequência geral do aluno
+* Identificação de alunos:
+
+  * acima da média geral
+  * com frequência menor que 75%
