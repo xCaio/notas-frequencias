@@ -17,8 +17,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type Student = {
   name: string;
-  grades: number[]; // length 5
-  attendance: number; // 0-100
+  grades: number[];
+  attendance: number;
 };
 
 const STORAGE_KEY = '@students_v1';
@@ -50,7 +50,7 @@ export default function Index() {
       const raw = await AsyncStorage.getItem(STORAGE_KEY);
       if (raw) {
         const parsed: Student[] = JSON.parse(raw);
-        // garantir formato
+        
         const normalized = parsed.map((p) => ({
           name: p.name || '',
           grades: (p.grades || [0, 0, 0, 0, 0]).map((n) => Number.isFinite(n) ? n : 0).slice(0, 5).concat(Array(Math.max(0, 5 - (p.grades || []).length)).fill(0)),
@@ -92,7 +92,7 @@ export default function Index() {
   const perSubject = classAveragePerSubject();
   const overallClassAvg = classAverageOverall();
 
-  // CRUD helpers
+
   const openNew = () => {
     setEditingIndex(-1);
     setForm({ name: '', grades: Array(5).fill(''), attendance: '' });
