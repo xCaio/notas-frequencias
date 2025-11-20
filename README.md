@@ -17,7 +17,7 @@ Este projeto é um aplicativo criado em **React Native + Expo**, permitindo que 
 1. Clone ou copie o projeto:
 
 ```
-git clone https://github.com/xCaio/notas-e-frequencia.git
+git clone https://github.com/xCaio/notas-frequencias.git
 ```
 
 2. Entre na pasta do projeto:
